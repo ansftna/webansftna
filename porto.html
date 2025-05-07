@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ansftna Portfolio</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f5f0;
+            color: #5d4037;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 60px 0;
+        }
+        
+        h1, h2, h3 {
+            font-weight: 600;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        /* Header */
+        header {
+            background-color: #d7ccc8;
+            color: #3e2723;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: #5d4037;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #8d6e63;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background-color: #efebe9;
+            color: #5d4037;
+            margin-top: 60px;
+            background-image: linear-gradient(to bottom right, #efebe9, #d7ccc8);
+            padding: 40px 0;
+        }
+        
+        .hero-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+        
+        .hero-text {
+            flex: 1;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #5d4037;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            max-width: 400px;
+        }
+        
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 50%;
+            border: 8px solid white;
+            box-shadow: 0 10px 30px rgba(93, 64, 55, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .hero-image img:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(93, 64, 55, 0.3);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #8d6e63;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 3px 10px rgba(141, 110, 99, 0.3);
+        }
+        
+        .btn:hover {
+            background-color: #6d4c41;
+            transform: translateY(-3px);
+        }
+        
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background-color: #f8f5f0;
+        }
+        
+        .about h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: #5d4037;
+            text-align: center;
+            position: relative;
+        }
+        
+        .about h2:after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background-color: #8d6e63;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 40px;
+            flex-direction: row;
+        }
+        
+        .about-text {
+            flex: 3;
+        }
+        
+        .about-intro {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            color: #5d4037;
+        }
+        
+        .highlight {
+            color: #6d4c41;
+            font-weight: 600;
+        }
+        
+        .about-box {
+            background-color: #fff;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid #d7ccc8;
+        }
+        
+        .about-item {
+            margin-bottom: 25px;
+        }
+        
+        .about-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .about-item h3 {
+            display: flex;
+            align-items: center;
+            color: #6d4c41;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        .about-item h3 i {
+            margin-right: 10px;
+            background-color: #efebe9;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+        
+        .timeline {
+            list-style: none;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .timeline:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 5px;
+            bottom: 0;
+            width: 2px;
+            background-color: #d7ccc8;
+        }
+        
+        .timeline li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 15px;
+        }
+        
+        .timeline li:before {
+            content: "";
+            position: absolute;
+            left: -6px;
+            top: 5px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: #fff;
+            border: 2px solid #8d6e63;
+        }
+        
+        .timeline-date {
+            font-size: 14px;
+            color: #8d6e63;
+            font-weight: 500;
+            margin-bottom: 5px;
+            display: block;
+        }
+        
+        .timeline-content h4 {
+            margin: 0;
+            font-size: 16px;
+            color: #5d4037;
+        }
+        
+        .timeline-content p {
+            margin: 5px 0 0;
+            font-size: 14px;
+            color: #8d6e63;
+        }
+        
+        .skills-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .skill-pill {
+            background-color: #efebe9;
+            color: #6d4c41;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            transition: 0.3s;
+        }
+        
+        .skill-pill:hover {
+            background-color: #8d6e63;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+        
+        .skill-pill i {
+            margin-right: 5px;
+            font-size: 12px;
+        }
+        
+        /* Projects Section */
+        .projects {
+            background-color: #fff;
+        }
+        
+        .projects h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            text-align: center;
+            color: #5d4037;
+        }
+        
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .project-card {
+            background-color: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: 0.3s;
+            border: 1px solid #d7ccc8;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(93, 64, 55, 0.15);
+        }
+        
+        .project-img {
+    height: 200px;
+    background-color: #efebe9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.project-img img {
+    max-width: 250%;  /* Changed from 100% to 50% */
+    max-height: 110%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.project-img img:hover {
+    transform: scale(1.1);
+}
+
+  
+        .project-info {
+            padding: 20px;
+        }
+        
+        .project-info h3 {
+            margin-bottom: 10px;
+            color: #6d4c41;
+        }
+        
+        .project-info p {
+            margin-bottom: 15px;
+            color: #5d4037;
+        }
+        
+        .project-links a {
+            display: inline-block;
+            margin-right: 10px;
+            color: #8d6e63;
+            text-decoration: none;
+        }
+        
+        .project-links a:hover {
+            color: #6d4c41;
+        }
+        
+        /* Blog Section */
+        .blog {
+            background-color: #f8f5f0;
+        }
+        
+        .blog h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            text-align: center;
+            color: #5d4037;
+        }
+        
+        .blog-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .blog-card {
+            background-color: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: 0.3s;
+            border: 1px solid #d7ccc8;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(93, 64, 55, 0.15);
+        }
+        
+        .blog-img {
+    height: 180px;
+    background-color: #efebe9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.blog-img img {
+    max-width: 250%;  /* Changed from 100% to 50% */
+    max-height: 115%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.blog-img img:hover {
+    transform: scale(1.1);
+}
+        
+        .blog-info {
+            padding: 20px;
+        }
+        
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #a1887f;
+        }
+        
+        .blog-info h3 {
+            margin-bottom: 10px;
+            color: #6d4c41;
+        }
+        
+        .blog-info p {
+            margin-bottom: 15px;
+            color: #5d4037;
+        }
+        
+        .blog-tags {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+        
+        .blog-tag {
+            background-color: #efebe9;
+            color: #8d6e63;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+        
+        .read-more {
+            color: #8d6e63;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .read-more i {
+            margin-left: 5px;
+            transition: 0.3s;
+        }
+        
+        .read-more:hover {
+            color: #6d4c41;
+        }
+        
+        .read-more:hover i {
+            transform: translateX(3px);
+        }
+        
+        .view-all-btn {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background-color: #fff;
+        }
+        
+        .contact h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            text-align: center;
+            color: #5d4037;
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #f8f5f0;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+            color: #5d4037;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d7ccc8;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #8d6e63;
+            box-shadow: 0 0 0 2px rgba(141, 110, 99, 0.2);
+        }
+        
+        .form-group textarea {
+            height: 150px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #d7ccc8;
+            color: #5d4037;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .social-links {
+            margin-bottom: 20px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            margin: 0 10px;
+            color: #5d4037;
+            font-size: 24px;
+            transition: 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: #8d6e63;
+            transform: translateY(-3px);
+        }
+
+        /* Decorative Elements */
+        .decorative-flower {
+            position: absolute;
+            font-size: 30px;
+            color: #d7ccc8;
+            opacity: 0.3;
+            z-index: -1;
+        }
+        
+        /* Responsive Design */
+        @media screen and (max-width: 992px) {
+            .hero-flex {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+            
+            .hero-image {
+                margin-bottom: 30px;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .about-content {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .profile-img {
+                margin-bottom: 30px;
+                order: -1;
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            .projects-container, .blog-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .skills-pills {
+                gap: 8px;
+            }
+            
+            .skill-pill {
+                padding: 6px 12px;
+                font-size: 13px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Decorative Elements -->
+    <div class="decorative-flower" style="top: 20%; left: 5%;">✿</div>
+    <div class="decorative-flower" style="top: 35%; right: 8%;">❀</div>
+    <div class="decorative-flower" style="top: 65%; left: 10%;">✿</div>
+    <div class="decorative-flower" style="top: 80%; right: 5%;">❀</div>
+
+    <!-- Header -->
+    <header>
+        <div class="container navbar">
+            <div class="logo">Ansftna</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <div class="hero-flex">
+                <div class="hero-text">
+                    <h1>Hello, I'm <span style="color: #6d4c41;">Ana Siska Fitriana</span></h1>
+                    <p>Web Developer & UI/UX Designer</p>
+                    <p>"Life is the art of drawing without an eraser"</p>
+                    <a href="#contact" class="btn">Get In Touch</a>
+                </div>
+                <div class="hero-image">
+                    <img src="Profil.jpg" alt="Ana Siska Fitriana">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">            
+                <div class="about-text">
+                    <p class="about-intro">Hello! Saya <span class="highlight">Ana Siska Fitriana</span>, seorang mahasiswa Sistem Informasi di Universitas Islam Nahdlatul Ulama Jepara, saya memiliki ketertarikan dalam dunia Desain UI/UX dan pengembangan web.</p>
+                    
+                    <div class="about-box">
+                        <div class="about-item">
+                            <h3><i class="fas fa-user-graduate"></i> Education</h3>
+                            <ul class="timeline">
+                                <li>
+                                    <span class="timeline-date">2023 - Present</span>
+                                    <div class="timeline-content">
+                                        <h4>Universitas Islam Nahdlatul Ulama Jepara</h4>
+                                        <p>Information Systems</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="timeline-date">2019 - 2022</span>
+                                    <div class="timeline-content">
+                                        <h4>Vocational High School</h4>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="timeline-date">2016 - 2019</span>
+                                    <div class="timeline-content">
+                                        <h4>Junior High School</h4>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="about-item">
+                            <h3><i class="fas fa-code"></i> Ketrampilan</h3>
+                            <div class="skills-pills">
+                                <span class="skill-pill"><i class="fab fa-html5"></i> HTML</span>
+                                <span class="skill-pill"><i class="fab fa-css3-alt"></i> CSS</span>
+                                <span class="skill-pill"><i class="fab fa-js"></i> JavaScript</span>
+                                <span class="skill-pill"><i class="fab fa-react"></i> React</span>
+                            </div>
+                        </div>
+                        <div class="about-item">
+                            <h3><i class="fas fa-code"></i> Tools</h3>
+                            <div class="skills-pills">
+                                <span class="skill-pill"><i class="fab fa-figma"></i> Figma</span>
+                                <span class="skill-pill"><i class="fab fa-git-alt"></i> Git</span>
+                                <span class="skill-pill"><i class="fab fa-adobe"></i> Adobe XD</span>
+                                <span class="skill-pill"><i class="fa fa-code-branch"></i> VSCode</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2>My Projects</h2>
+            <div class="projects-container">
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="photo1.jpg" alt="Project 1">
+                    </div>
+                    <div class="project-info">
+                        <h3>Boutique E-commerce</h3>
+                        <p>A fully responsive e-commerce platform for a fashion boutique built with React, Node.js, and MongoDB. Features include personalized recommendations, wishlist functionality, and secure payment integration.</p>
+                        <div class="project-links">
+                            <a href="#"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="photo2.jpg" alt="Project 2">
+                    </div>
+                    <div class="project-info">
+                        <h3>Lifestyle Blog</h3>
+                        <p>A modern lifestyle blog with a focus on clean typography and beautiful imagery. Built with Gatsby and headless CMS. Features include comment system, newsletter integration, and social sharing capabilities.</p>
+                        <div class="project-links">
+                            <a href="#"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="photo3.jpg" alt="Project 3">
+                    </div>
+                    <div class="project-info">
+                        <h3>Wellness App</h3>
+                        <p>A wellness application that helps users track their meditation sessions, mood, and daily habits. Built with React Native for cross-platform compatibility. Features include progress visualization and guided sessions.</p>
+                        <div class="project-links">
+                            <a href="#"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog" id="blog">
+        <div class="container">
+            <h2>My Blog</h2>
+            <div class="blog-container">
+                <div class="blog-card">
+                    <div class="blog-img">
+                        <img src="photo4.jpg" alt="Blog Post 1">
+                    </div>
+                    <div class="blog-info">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> May 1, 2025</span>
+                            <span><i class="far fa-comment"></i> 8 Comments</span>
+                        </div>
+                        <h3>The Future of Responsive Web Design</h3>
+                        <div class="blog-tags">
+                            <span class="blog-tag">CSS</span>
+                            <span class="blog-tag">Design</span>
+                            <span class="blog-tag">Responsive</span>
+                        </div>
+                        <p>Exploring the latest trends and technologies that are shaping the future of responsive web design, from container queries to adaptive typography.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="blog-card">
+                    <div class="blog-img">
+                        <img src="photo5.jpg" alt="Blog Post 2">
+                    </div>
+                    <div class="blog-info">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> April 22, 2025</span>
+                            <span><i class="far fa-comment"></i> 12 Comments</span>
+                        </div>
+                        <h3>Getting Started with React Hooks</h3>
+                        <div class="blog-tags">
+                            <span class="blog-tag">React</span>
+                            <span class="blog-tag">JavaScript</span>
+                            <span class="blog-tag">Tutorial</span>
+                        </div>
+                        <p>A comprehensive beginner's guide to React Hooks. Learn how to replace class components with functional components using useState, useEffect, and more.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="blog-card">
+                    <div class="blog-img">
+                        <img src="photo6.jpg" alt="Blog Post 3">
+                    </div>
+                    <div class="blog-info">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> April 15, 2025</span>
+                            <span><i class="far fa-comment"></i> 5 Comments</span>
+                        </div>
+                        <h3>Improving Website Accessibility</h3>
+                        <div class="blog-tags">
+                            <span class="blog-tag">Accessibility</span>
+                            <span class="blog-tag">HTML</span>
+                            <span class="blog-tag">Best Practices</span>
+                        </div>
+                        <p>Essential tips and techniques for making your website more accessible to all users, including those with disabilities. WCAG guidelines explained simply.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="view-all-btn">
+                <a href="#" class="btn">View All Posts</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Your Name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Your Email">
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" placeholder="Subject">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" placeholder="Your Message"></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-pinterest"></i></a>
+            </div>
+            <p>&copy; 2025 Ana Siska Fitriana. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    const headerOffset = 80;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.backgroundColor = 'rgba(215, 204, 200, 0.95)';
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.backgroundColor = '#d7ccc8';
+                header.style.boxShadow = 'none';
+            }
+        });
+        
+        // Form submission
+        const contactForm = document.querySelector('.contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const subject = document.getElementById('subject').value;
+                const message = document.getElementById('message').value;
+                
+                // Basic validation
+                if (!name || !email || !message) {
+                    alert('Please fill in all required fields.');
+                    return;
+                }
+                
+                // You would typically send this data to a server here
+                alert('Thank you for your message! I will get back to you soon.');
+                
+                // Reset form
+                contactForm.reset();
+            });
+        }
+    </script>
+</body>
+</html>
